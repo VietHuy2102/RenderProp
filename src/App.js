@@ -5,6 +5,7 @@ import Counter01 from "./Counter01";
 import Count from "./Count";
 import Login from "./Login";
 
+
 function App() {
     return (
         // <Tech2 render={(data)=>{
@@ -31,7 +32,36 @@ function App() {
             {/*        </>*/}
             {/*    )*/}
             {/*}}/>*/}
-            <Login/>
+            <Login render = {(data)=>{
+                return (
+                    <>
+                        <div className="container">
+                            <div className="row justify-content-center">
+                                <div className="col col-6">
+                                    <h1>Login</h1>
+                                    <form onSubmit={data.submit}>
+                                        <div className="mb-3">
+                                            <label>Email</label>
+                                            <input type="text" name="email" className="form-control" placeholder="Email..."
+                                                   onChange={data.email}/>
+                                        </div>
+                                        <div className="mb-3">
+                                            <label>Password</label>
+                                            <input type="password" name="password" className="form-control"
+                                                   placeholder="Password..." onChange={data.password}/>
+                                        </div>
+
+                                        <button type="submit" className="btn btn-primary">Login</button>
+
+                                    </form>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </>
+                )
+            }}/>
 
         </>
     );
